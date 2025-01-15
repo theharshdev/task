@@ -1165,6 +1165,10 @@ video {
 }
 
 @media (min-width: 640px) {
+  .sm\:col-span-1 {
+    grid-column: span 1 / span 1;
+  }
+
   .sm\:min-w-80 {
     min-width: 20rem;
   }
@@ -1193,6 +1197,10 @@ video {
     max-width: 450px;
   }
 
+  .sm\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .sm\:p-5 {
     padding: 1.25rem;
   }
@@ -1217,20 +1225,12 @@ video {
 }
 
 @media (min-width: 768px) {
-  .md\:col-span-1 {
-    grid-column: span 1 / span 1;
-  }
-
   .md\:min-w-\[300px\] {
     min-width: 300px;
   }
 
   .md\:max-w-\[300px\] {
     max-width: 300px;
-  }
-
-  .md\:grid-cols-2 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .md\:p-6 {
