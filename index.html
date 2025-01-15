@@ -18,16 +18,18 @@
     <link href="src/assets/css/style.css" rel="stylesheet" />
   </head>
   <body class="bg-zinc-900">
+    <!-- Navbar -->
     <div class="bg-zinc-800 fixed top-0 left-0 w-full">
       <section
-        class="container mx-auto max-w-[1450px] lg:px-16 md:px-10 sm:px-8 px-4"
+        class="container mx-auto max-w-[1450px] lg:px-16 md:px-10 sm:px-8 px-4 flex gap-2 justify-between items-center"
       >
-        <nav class="flex items-center gap-3 py-3 text-white">
+        <!-- Top Navigation Buttons -->
+        <nav class="flex items-center gap-2 py-3 text-white">
           <button
             id="openForm"
             type="button"
             href="#"
-            class="font-medium text-sm no-underline flex justify-center items-center leading-none gap-1 py-3 px-5 bg-zinc-900 rounded-lg hover:bg-zinc-700 transition-all"
+            class="sm:font-medium sm:text-sm text-xs no-underline flex justify-center items-center leading-none gap-1 p-3 whitespace-nowrap bg-zinc-900 rounded-lg hover:bg-zinc-700 transition-all"
           >
             Add Task <i class="bi bi-plus-lg"></i>
           </button>
@@ -35,16 +37,61 @@
             id="openSheet"
             type="button"
             href="#"
-            class="font-medium text-sm no-underline flex justify-center items-center leading-none gap-2 py-3 px-5 bg-zinc-900 rounded-lg hover:bg-zinc-700 transition-all"
+            class="sm:font-medium sm:text-sm text-xs no-underline flex justify-center items-center leading-none gap-2 p-3 whitespace-nowrap bg-zinc-900 rounded-lg hover:bg-zinc-700 transition-all"
           >
             View Timesheet <i class="bi bi-book"></i>
           </button>
         </nav>
+        <!-- Profile Image -->
+        <div class="group relative cursor-pointer">
+          <img
+            src="src/assets/img/Img.png"
+            alt="Profile Image of the user"
+            class="w-10 relative z-10 cursor-pointer h-10 min-w-10 object-cover rounded-full border-2 border-zinc-700 group-hover:border-green-500 transition-all"
+          />
+          <!-- Profile Popup Box -->
+          <div
+            class="absolute top-10 right-0 max-w-80 sm:min-w-80 min-w-72 text-sm font-normal text-white text-left cursor-auto hidden group-hover:block pt-2"
+          >
+            <div
+              class="border-2 border-zinc-700 bg-zinc-800 rounded-lg overflow-hidden p-5 shadow-lg shadow-black w-full"
+            >
+              <div class="flex items-center justify-between w-full gap-2">
+                <h3>Harsh Kushwaha</h3>
+                <button type="button" id="openProfileUpdatePopup">
+                  <i
+                    class="bi bi-pencil-fill cursor-pointer w-7 h-7 min-w-7 flex justify-center items-center text-xs rounded-full hover:bg-zinc-700 transition-all"
+                  ></i>
+                </button>
+              </div>
+              <p class="text-xs text-zinc-400">Software Developer II</p>
+              <!-- Profile Action Buttons -->
+              <div class="mt-3 grid grid-cols-2 gap-2">
+                <button
+                  type="button"
+                  id="openLogoutPopup"
+                  class="text-white transition-all hover:text-green-500 text-sm font-normal p-2 rounded-lg bg-zinc-700 leading-none text-center flex col-span-1 items-center justify-center gap-1"
+                >
+                  Logout<i class="bi leading-none bi-box-arrow-right"></i>
+                </button>
+                <button
+                  type="button"
+                  id="oepnDeletionPopup"
+                  class="text-white transition-all hover:text-red-500 text-sm font-normal p-2 rounded-lg bg-zinc-700 leading-none text-center flex col-span-1 items-center justify-center gap-1"
+                >
+                  Delete Acc.<i class="bi leading-none bi-trash"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
     </div>
+    <!-- Timesheet Table -->
     <section
       class="container mx-auto max-w-[1450px] lg:px-16 md:px-10 sm:px-8 px-4 py-10 mt-12"
     >
+      <!-- Timesheet Form -->
       <div id="timesheetForm">
         <h3 class="text-center text-white md:text-2xl text-xl font-medium mb-5">
           Add Timesheet
@@ -54,7 +101,7 @@
         >
           <div class="grid md:grid-cols-2 lg:gap-5 gap-3 w-full">
             <label class="block w-full md:col-span-1 col-span-2">
-              <p class="font-semibold">Date:</p>
+              <p class="font-normal">Date:</p>
               <input
                 type="text"
                 placeholder="Enter date here"
@@ -62,7 +109,7 @@
               />
             </label>
             <label class="block w-full md:col-span-1 col-span-2">
-              <p class="font-semibold">Project Name:</p>
+              <p class="font-normal">Project Name:</p>
               <input
                 type="text"
                 placeholder="Project working on!"
@@ -70,7 +117,7 @@
               />
             </label>
             <label class="block w-full col-span-2">
-              <p class="font-semibold">Task Description:</p>
+              <p class="font-normal">Task Description:</p>
               <textarea
                 type="text"
                 placeholder="Enter the task description here"
@@ -78,7 +125,7 @@
               ></textarea>
             </label>
             <label class="block w-full md:col-span-1 col-span-2">
-              <p class="font-semibold">Activity:</p>
+              <p class="font-normal">Activity:</p>
               <input
                 type="text"
                 placeholder="Enter the activity here"
@@ -86,7 +133,7 @@
               />
             </label>
             <label class="block w-full md:col-span-1 col-span-2">
-              <p class="font-semibold">Start Time:</p>
+              <p class="font-normal">Start Time:</p>
               <input
                 type="text"
                 placeholder="Enter start time here"
@@ -94,7 +141,7 @@
               />
             </label>
             <label class="block w-full md:col-span-1 col-span-2">
-              <p class="font-semibold">End Time:</p>
+              <p class="font-normal">End Time:</p>
               <input
                 type="text"
                 placeholder="Enter the end time here"
@@ -102,7 +149,7 @@
               />
             </label>
             <label class="block w-full md:col-span-1 col-span-2">
-              <p class="font-semibold">Total Hours:</p>
+              <p class="font-normal">Total Hours:</p>
               <input
                 type="text"
                 placeholder="Enter total work hours"
@@ -120,6 +167,7 @@
           </div>
         </form>
       </div>
+      <!-- Timesheet Listing -->
       <div id="timesheet" class="hidden">
         <div
           class="lg:p-8 md:p-6 sm:p-5 p-4 border-2 border-zinc-800 rounded-lg"
@@ -130,202 +178,213 @@
             Timesheet Listing
           </h3>
           <div class="overflow-x-auto">
+            <!-- Table -->
             <table
-              class="text-white font-light text-sm leading-none w-full text-left"
+              class="text-white font-light sm:text-sm text-xs leading-none w-full text-left rounded-lg overflow-hidden border-collapse"
             >
+              <!-- Table Head -->
               <thead class="text-green-500">
                 <tr>
-                  <th class="p-3 whitespace-nowrap">Date</th>
-                  <th class="p-3 whitespace-nowrap min-w-[150px]">
+                  <th class="px-3 py-4 font-normal whitespace-nowrap">Date</th>
+                  <th
+                    class="px-3 py-4 font-normal whitespace-nowrap min-w-[150px]"
+                  >
                     Project Name
                   </th>
                   <th
-                    class="p-3 whitespace-nowrap lg:min-w-[450px] md:min-w-[400px] sm:min-w-[350px] min-w-[290px]"
+                    class="px-3 py-4 font-normal whitespace-nowrap lg:min-w-[350px] md:min-w-[300px] sm:min-w-[250px] min-w-[200px] lg:max-w-[350px] md:max-w-[300px] sm:max-w-[250px] max-w-[200px]"
                   >
                     Task Description
                   </th>
-                  <th class="p-3 whitespace-nowrap">Activity</th>
-                  <th class="p-3 whitespace-nowrap">Start Time</th>
-                  <th class="p-3 whitespace-nowrap">End Time</th>
-                  <th class="p-3 whitespace-nowrap">Total Hours</th>
-                  <th class="p-3 whitespace-nowrap text-blue-500 uppercase">
-                    Edit
+                  <th class="px-3 py-4 font-normal whitespace-nowrap">
+                    Activity
                   </th>
-                  <th class="p-3 whitespace-nowrap text-red-500 uppercase">
+                  <th class="px-3 py-4 font-normal whitespace-nowrap">
+                    Start Time
+                  </th>
+                  <th class="px-3 py-4 font-normal whitespace-nowrap">
+                    End Time
+                  </th>
+                  <th class="px-3 py-4 font-normal whitespace-nowrap">
+                    Total Hours
+                  </th>
+                  <th class="px-3 py-4 font-normal whitespace-nowrap">Edit</th>
+                  <th class="px-3 py-4 font-normal whitespace-nowrap">
                     Delete
                   </th>
                 </tr>
               </thead>
+              <!-- Table Body -->
               <tbody>
                 <tr>
-                  <td class="p-3">12/12/2024</td>
-                  <td class="p-3">Internal Project</td>
-                  <td class="p-3">
+                  <td class="p-2">12/12/2024</td>
+                  <td class="p-2">Internal Project</td>
+                  <td class="p-2">
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                     Animi alias dicta eligendi, et at voluptatem iste beatae
                     quis esse tempore.
                   </td>
-                  <td class="p-3">Design</td>
-                  <td class="p-3">01:00 PM</td>
-                  <td class="p-3">09:00 PM</td>
-                  <td class="p-3">8 Hours</td>
-                  <td class="p-3">
+                  <td class="p-2">Design</td>
+                  <td class="p-2">01:00 PM</td>
+                  <td class="p-2">09:00 PM</td>
+                  <td class="p-2">8 Hours</td>
+                  <td class="p-2">
                     <button
                       type="button"
-                      class="flex justify-center items-center p-2 text-blue-500 hover:bg-blue-500 hover:text-white transition-all rounded-sm"
+                      class="flex justify-center items-center p-2 text-white"
                     >
                       <i class="bi bi-pencil-fill"></i>
                     </button>
                   </td>
-                  <td class="p-3">
+                  <td class="p-2">
                     <button
                       type="button"
-                      class="flex justify-center items-center p-2 text-red-500 hover:bg-red-500 hover:text-white transition-all rounded-sm"
+                      class="flex justify-center items-center p-2 text-red-500 hover:bg-red-500 hover:text-white w-full transition-all rounded-sm"
                     >
                       <i class="bi bi-trash3"></i>
                     </button>
                   </td>
                 </tr>
                 <tr>
-                  <td class="p-3">12/12/2024</td>
-                  <td class="p-3">Internal Project</td>
-                  <td class="p-3">
+                  <td class="p-2">12/12/2024</td>
+                  <td class="p-2">Internal Project</td>
+                  <td class="p-2">
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                     Animi alias dicta eligendi, et at voluptatem iste beatae
                     quis esse tempore.
                   </td>
-                  <td class="p-3">Design</td>
-                  <td class="p-3">01:00 PM</td>
-                  <td class="p-3">09:00 PM</td>
-                  <td class="p-3">8 Hours</td>
-                  <td class="p-3">
+                  <td class="p-2">Design</td>
+                  <td class="p-2">01:00 PM</td>
+                  <td class="p-2">09:00 PM</td>
+                  <td class="p-2">8 Hours</td>
+                  <td class="p-2">
                     <button
                       type="button"
-                      class="flex justify-center items-center p-2 text-blue-500 hover:bg-blue-500 hover:text-white transition-all rounded-sm"
+                      class="flex justify-center items-center p-2 text-white"
                     >
                       <i class="bi bi-pencil-fill"></i>
                     </button>
                   </td>
-                  <td class="p-3">
+                  <td class="p-2">
                     <button
                       type="button"
-                      class="flex justify-center items-center p-2 text-red-500 hover:bg-red-500 hover:text-white transition-all rounded-sm"
+                      class="flex justify-center items-center p-2 text-red-500 hover:bg-red-500 hover:text-white w-full transition-all rounded-sm"
                     >
                       <i class="bi bi-trash3"></i>
                     </button>
                   </td>
                 </tr>
                 <tr>
-                  <td class="p-3">12/12/2024</td>
-                  <td class="p-3">Internal Project</td>
-                  <td class="p-3">
+                  <td class="p-2">12/12/2024</td>
+                  <td class="p-2">Internal Project</td>
+                  <td class="p-2">
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                     Animi alias dicta eligendi, et at voluptatem iste beatae
                     quis esse tempore.
                   </td>
-                  <td class="p-3">Design</td>
-                  <td class="p-3">01:00 PM</td>
-                  <td class="p-3">09:00 PM</td>
-                  <td class="p-3">8 Hours</td>
-                  <td class="p-3">
+                  <td class="p-2">Design</td>
+                  <td class="p-2">01:00 PM</td>
+                  <td class="p-2">09:00 PM</td>
+                  <td class="p-2">8 Hours</td>
+                  <td class="p-2">
                     <button
                       type="button"
-                      class="flex justify-center items-center p-2 text-blue-500 hover:bg-blue-500 hover:text-white transition-all rounded-sm"
+                      class="flex justify-center items-center p-2 text-white"
                     >
                       <i class="bi bi-pencil-fill"></i>
                     </button>
                   </td>
-                  <td class="p-3">
+                  <td class="p-2">
                     <button
                       type="button"
-                      class="flex justify-center items-center p-2 text-red-500 hover:bg-red-500 hover:text-white transition-all rounded-sm"
+                      class="flex justify-center items-center p-2 text-red-500 hover:bg-red-500 hover:text-white w-full transition-all rounded-sm"
                     >
                       <i class="bi bi-trash3"></i>
                     </button>
                   </td>
                 </tr>
                 <tr>
-                  <td class="p-3">12/12/2024</td>
-                  <td class="p-3">Internal Project</td>
-                  <td class="p-3">
+                  <td class="p-2">12/12/2024</td>
+                  <td class="p-2">Internal Project</td>
+                  <td class="p-2">
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                     Animi alias dicta eligendi, et at voluptatem iste beatae
                     quis esse tempore.
                   </td>
-                  <td class="p-3">Design</td>
-                  <td class="p-3">01:00 PM</td>
-                  <td class="p-3">09:00 PM</td>
-                  <td class="p-3">8 Hours</td>
-                  <td class="p-3">
+                  <td class="p-2">Design</td>
+                  <td class="p-2">01:00 PM</td>
+                  <td class="p-2">09:00 PM</td>
+                  <td class="p-2">8 Hours</td>
+                  <td class="p-2">
                     <button
                       type="button"
-                      class="flex justify-center items-center p-2 text-blue-500 hover:bg-blue-500 hover:text-white transition-all rounded-sm"
+                      class="flex justify-center items-center p-2 text-white"
                     >
                       <i class="bi bi-pencil-fill"></i>
                     </button>
                   </td>
-                  <td class="p-3">
+                  <td class="p-2">
                     <button
                       type="button"
-                      class="flex justify-center items-center p-2 text-red-500 hover:bg-red-500 hover:text-white transition-all rounded-sm"
+                      class="flex justify-center items-center p-2 text-red-500 hover:bg-red-500 hover:text-white w-full transition-all rounded-sm"
                     >
                       <i class="bi bi-trash3"></i>
                     </button>
                   </td>
                 </tr>
                 <tr>
-                  <td class="p-3">12/12/2024</td>
-                  <td class="p-3">Internal Project</td>
-                  <td class="p-3">
+                  <td class="p-2">12/12/2024</td>
+                  <td class="p-2">Internal Project</td>
+                  <td class="p-2">
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                     Animi alias dicta eligendi, et at voluptatem iste beatae
                     quis esse tempore.
                   </td>
-                  <td class="p-3">Design</td>
-                  <td class="p-3">01:00 PM</td>
-                  <td class="p-3">09:00 PM</td>
-                  <td class="p-3">8 Hours</td>
-                  <td class="p-3">
+                  <td class="p-2">Design</td>
+                  <td class="p-2">01:00 PM</td>
+                  <td class="p-2">09:00 PM</td>
+                  <td class="p-2">8 Hours</td>
+                  <td class="p-2">
                     <button
                       type="button"
-                      class="flex justify-center items-center p-2 text-blue-500 hover:bg-blue-500 hover:text-white transition-all rounded-sm"
+                      class="flex justify-center items-center p-2 text-white"
                     >
                       <i class="bi bi-pencil-fill"></i>
                     </button>
                   </td>
-                  <td class="p-3">
+                  <td class="p-2">
                     <button
                       type="button"
-                      class="flex justify-center items-center p-2 text-red-500 hover:bg-red-500 hover:text-white transition-all rounded-sm"
+                      class="flex justify-center items-center p-2 text-red-500 hover:bg-red-500 hover:text-white w-full transition-all rounded-sm"
                     >
                       <i class="bi bi-trash3"></i>
                     </button>
                   </td>
                 </tr>
                 <tr>
-                  <td class="p-3">12/12/2024</td>
-                  <td class="p-3">Internal Project</td>
-                  <td class="p-3">
+                  <td class="p-2">12/12/2024</td>
+                  <td class="p-2">Internal Project</td>
+                  <td class="p-2">
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                     Animi alias dicta eligendi, et at voluptatem iste beatae
                     quis esse tempore.
                   </td>
-                  <td class="p-3">Design</td>
-                  <td class="p-3">01:00 PM</td>
-                  <td class="p-3">09:00 PM</td>
-                  <td class="p-3">8 Hours</td>
-                  <td class="p-3">
+                  <td class="p-2">Design</td>
+                  <td class="p-2">01:00 PM</td>
+                  <td class="p-2">09:00 PM</td>
+                  <td class="p-2">8 Hours</td>
+                  <td class="p-2">
                     <button
                       type="button"
-                      class="flex justify-center items-center p-2 text-blue-500 hover:bg-blue-500 hover:text-white transition-all rounded-sm"
+                      class="flex justify-center items-center p-2 text-white"
                     >
                       <i class="bi bi-pencil-fill"></i>
                     </button>
                   </td>
-                  <td class="p-3">
+                  <td class="p-2">
                     <button
                       type="button"
-                      class="flex justify-center items-center p-2 text-red-500 hover:bg-red-500 hover:text-white transition-all rounded-sm"
+                      class="flex justify-center items-center p-2 text-red-500 hover:bg-red-500 hover:text-white w-full transition-all rounded-sm"
                     >
                       <i class="bi bi-trash3"></i>
                     </button>
@@ -333,6 +392,128 @@
                 </tr>
               </tbody>
             </table>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Profile Update Popup -->
+    <section
+      id="profileUpdatePopup"
+      class="fixed hidden top-0 left-0 w-full h-full backdrop-blur-md z-20 justify-center items-center"
+    >
+      <div
+        class="container mx-auto max-w-[1450px] lg:px-16 md:px-10 sm:px-8 px-4 py-10 flex justify-center items-center"
+      >
+        <div
+          class="bg-zinc-900 lg:p-8 md:p-6 sm:p-5 p-4 rounded-lg border-zinc-800 border-2 text-white text-sm font-normal sm:min-w-[500px] shadow-xl shadow-black"
+        >
+          <h3 class="md:text-2xl text-xl text-center">Update you profile</h3>
+          <form action="" class="grid grid-cols-2 gap-3 w-full mt-5">
+            <input
+              type="text"
+              placeholder="Your Name"
+              class="block w-full col-span-2 bg-zinc-800 outline-none border-2 border-zinc-700 rounded-lg p-3 focus:border-green-500 transition-all placeholder:text-zinc-400 focus:placeholder:opacity-0 placeholder:transition-all"
+            />
+            <input
+              type="text"
+              placeholder="Write About Yourself"
+              class="block w-full col-span-2 bg-zinc-800 outline-none border-2 border-zinc-700 rounded-lg p-3 focus:border-green-500 transition-all placeholder:text-zinc-400 focus:placeholder:opacity-0 placeholder:transition-all"
+            />
+            <label
+              class="block gap-2 w-full col-span-2 bg-zinc-800 outline-none border-2 border-zinc-700 rounded-lg p-3 text-zinc-400 relative cursor-pointer hover:border-green-500 transition-all"
+            >
+              <p>Upload Your Profile Picture</p>
+              <input
+                type="file"
+                class="text-xs bg-transparent outline-none mt-3 block ps-4 cursor-pointer pb-[3px]"
+              />
+              <span
+                class="absolute bottom-2 left-2 rounded-md bg-zinc-900 p-2 text-xs font-light cursor-pointer z-10 border border-zinc-800"
+                >Choose image</span
+              >
+            </label>
+            <button
+              type="button"
+              id="closeProfileUpdatePopup"
+              class="col-span-1 p-3 text-center text-sm leading-none flex justify-center items-center gap-1 bg-zinc-500 hover:bg-zinc-600 transition-all rounded-lg"
+            >
+              Cancel <i class="bi bi-x-lg"></i>
+            </button>
+            <button
+              type="button"
+              disabled
+              class="col-span-1 p-3 text-center text-sm leading-none flex justify-center disabled:cursor-not-allowed disabled:opacity-85 disabled:saturate-0 items-center gap-1 bg-green-500 hover:bg-green-600 transition-all rounded-lg"
+            >
+              Update <i class="bi bi-check-lg"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+    <!-- Profile Logout Popup -->
+    <section
+      id="logoutPopup"
+      class="fixed hidden top-0 left-0 w-full h-full backdrop-blur-md z-20 justify-center items-center"
+    >
+      <div
+        class="container mx-auto max-w-[1450px] lg:px-16 md:px-10 sm:px-8 px-4 py-10 flex justify-center items-center"
+      >
+        <div
+          class="bg-zinc-900 lg:p-8 md:p-6 sm:p-5 p-4 rounded-lg border-zinc-800 border-2 text-white text-sm font-normal sm:min-w-[450px] sm:max-w-[450px] w-full shadow-xl shadow-black text-left"
+        >
+          <h3 class="md:text-xl text-base">Confirm to logout!</h3>
+          <p class="sm:text-sm text-xs font-light mt-2">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam
+            suscipit nesciunt ipsam? Beatae, tenetur dignissimos.
+          </p>
+          <div class="flex justify-end items-center gap-2 mt-5">
+            <button
+              type="button"
+              id="closeLogoutPopup"
+              class="py-3 px-5 text-center text-sm leading-none flex justify-center items-center gap-1 bg-zinc-800 hover:bg-zinc-700 transition-all rounded-lg"
+            >
+              Cancel <i class="bi bi-x-lg"></i>
+            </button>
+            <button
+              type="button"
+              class="py-3 px-5 text-center text-sm leading-none flex justify-center items-center gap-1 bg-red-500 hover:bg-red-600 transition-all rounded-lg"
+            >
+              Logout <i class="bi bi-box-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Profile Delete Popup -->
+    <section
+      id="deletionPopup"
+      class="fixed hidden top-0 left-0 w-full h-full backdrop-blur-md z-20 justify-center items-center"
+    >
+      <div
+        class="container mx-auto max-w-[1450px] lg:px-16 md:px-10 sm:px-8 px-4 py-10 flex justify-center items-center"
+      >
+        <div
+          class="bg-zinc-900 lg:p-8 md:p-6 sm:p-5 p-4 rounded-lg border-zinc-800 border-2 text-white text-sm font-normal sm:min-w-[450px] sm:max-w-[450px] w-full shadow-xl shadow-black text-left"
+        >
+          <h3 class="md:text-xl text-base">Confirm to Delete Your Account</h3>
+          <p class="sm:text-sm text-xs font-light mt-2">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam
+            suscipit nesciunt ipsam? Beatae, tenetur dignissimos.
+          </p>
+          <div class="flex justify-end items-center gap-2 mt-5">
+            <button
+              type="button"
+              id="closeDeletionPopup"
+              class="p-3 text-center text-sm leading-none flex justify-center items-center gap-1 bg-zinc-800 hover:bg-zinc-700 transition-all rounded-lg"
+            >
+              Cancel <i class="bi bi-x-lg"></i>
+            </button>
+            <button
+              type="button"
+              class="p-3 text-center text-sm leading-none flex justify-center items-center gap-1 bg-red-500 hover:bg-red-600 transition-all rounded-lg whitespace-nowrap"
+            >
+              Delete Account <i class="bi bi-trash3"></i>
+            </button>
           </div>
         </div>
       </div>

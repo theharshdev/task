@@ -1,0 +1,56 @@
+<!-- npx tailwindcss -i ./src/assets/css/input.css -o ./src/assets/css/output.css --watch -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link href="src/assets/css/output.css" rel="stylesheet" />
+    <link href="src/assets/css/style.css" rel="stylesheet" />
+  </head>
+  <body class="bg-zinc-900">
+    <section
+      class="container mx-auto max-w-[1450px] lg:px-16 md:px-10 sm:px-8 px-4 py-10 flex justify-center items-center h-screen"
+    >
+      <div
+        class="bg-zinc-900 lg:p-8 md:p-6 sm:p-5 p-4 rounded-lg border-zinc-800 border-2 text-white text-sm font-normal sm:min-w-[500px] shadow-xl shadow-black"
+      >
+        <h3 class="md:text-2xl text-xl text-center">
+          Login with your mobile number
+        </h3>
+        <form action="index.html" class="grid grid-cols-2 gap-3 w-full mt-5">
+          <input
+            type="text"
+            required
+            placeholder="Your Mobile Number"
+            class="block w-full col-span-2 bg-zinc-800 outline-none border-2 border-zinc-700 rounded-lg p-3 focus:border-green-500 transition-all placeholder:text-zinc-400 focus:placeholder:opacity-0 placeholder:transition-all"
+          />
+          <input
+            type="text"
+            required
+            placeholder="Enter the OTP"
+            class="block w-full col-span-2 bg-zinc-800 outline-none border-2 border-zinc-700 rounded-lg p-3 focus:border-green-500 transition-all placeholder:text-zinc-400 focus:placeholder:opacity-0 placeholder:transition-all"
+          />
+          <div class="flex justify-center col-span-2">
+            <button
+              type="submit"
+              class="col-span-1 py-3 px-7 text-center text-sm leading-none flex justify-center items-center gap-1 bg-green-500 hover:bg-green-600 transition-all rounded-lg"
+            >
+              Login <i class="bi bi-check-lg"></i>
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+    <script src="src/assets/js/script.js"></script>
+  </body>
+</html>
